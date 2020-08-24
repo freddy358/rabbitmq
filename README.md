@@ -41,3 +41,10 @@
 **clusters.domainname** - you must change this value to your k8s cluster's domainname
 
 `kubernetes apply -f rabbitmq_statefulset.yaml`
+
+
+#### Add admin user
+
+`rabbitmqctl add_user admin admin123`
+`rabbitmqctl set_user_tags admin administrator`
+`rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"`
